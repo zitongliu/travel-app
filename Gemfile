@@ -53,3 +53,7 @@ group :development do
   gem 'binding_of_caller'
   gem 'meta_request'
 end
+
+group :production do
+  gem 'rails_12factor'
+end
