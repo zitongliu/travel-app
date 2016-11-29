@@ -1,1 +1,21 @@
-<h3><%= @user.username %>'s Profile</h3>
+<h2><%= @user.username %></h2>
+<p>Name: <%= @user.name %></p>
+<p>Gender: <%= @user.gender %></p>
+<p>DOB: <%= @user.dob %></p>
+<p>Country: <%= @user.country%></p>
+<p>Email: <%= @user.email%></p>
+
+<h3>Achievements</h3>
+<% @user.achievements.each do |achievement| %>
+  <hr>
+  <p><%= achievement.date %></p>
+  <p><%= achievement.location.name %></p>
+<% end %>
+<hr>
+
+<% if @user == @current_user %>
+  <div class="controls">
+    <%= link_to "Edit user", edit_user_path( @user ) %> |
+    <%= link_to "Delete account", user_path( @user ), :method => :delete, :data => { :confirm => "Are you sure?" } %>
+  </div>
+<% end %>

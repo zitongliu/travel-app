@@ -1,7 +1,14 @@
 <h1><%= @location.name %></h1>
 
+<h2>Info</h2>
 <h3><%= @location.country %></h2>
 
 <p><%= @location.description %></p>
 
 <%= image_tag @location.image %>
+
+<h2>Achievements</h2>
+<% @location.achievements.each do |achievement| %>
+  <h3><%= achievement.date %></h2>
+  <p><%= achievement.description%></p>
+<% end %>

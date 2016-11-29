@@ -9,7 +9,7 @@ class SessionController < ApplicationController
       flash[:success] = "You successfully logged in"
       session[:user_id] = user.id
 
-      redirect_to users_path
+      redirect_to user_path( user.id )
     else
       flash[:error] = "The password or email was incorrect"
       render :new
@@ -25,5 +25,5 @@ class SessionController < ApplicationController
   redirect_to root_path()
   end
 
-  
+
 end

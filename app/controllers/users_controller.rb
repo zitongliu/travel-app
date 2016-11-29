@@ -22,9 +22,33 @@ class UsersController < ApplicationController
     end
   end
 
+  def edit
+  # instead of doing: @user = User.find_by :id => params[:id]
+  # We use the below method. This ensures that no matter where you click on the edit requiest, the user is always to current user (session)
+
+  @user = @current_user
+  end
+
+  def update
+  # @user = User.find_by :id => params[:id]
+    @user = @current_user
+    if @user.update( user_params )
+      redirect_to @user
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+  # user = User.find_by :id => params[:id]
+    user = @current_user
+    user.destroy
+
+    redirect_to root_path()
+  end
+
   private
     def user_params
       params.require(:user).permit(:username, :name, :gender, :country, :dob, :email, :password, :password_confirmation)
     end
-
 end

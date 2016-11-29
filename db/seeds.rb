@@ -9,10 +9,10 @@
 puts "USERS!"
 User.destroy_all
 
-u1 = User.create :username => "fc1992", :name => 'Fernando Cris', :gender => "Male", :dob => "1991/08/09", :email => 'fc1992@email.com', :password => "chicken", :password_confirmation => "chicken"
-u2 = User.create :username => "benza", :name => 'Kristina Benz', :gender => "Female", :dob => "1989/01/15", :email => 'kristina@email.com', :password => "chicken", :password_confirmation => "chicken"
-u3 = User.create :username => "joseph", :name => 'Joseph Smith', :gender => "Male", :dob => "1981/05/20", :email => 'josephs@email.com', :password => "chicken", :password_confirmation => "chicken"
-u4 = User.create :username => "miss-faded", :name => 'Sarah Farell', :gender => "Female", :dob => "1992/03/22", :email => 'sarahf@email.com', :password => "chicken", :password_confirmation => "chicken"
+u1 = User.create :username => "fc1992", :name => 'Fernando Cris', :gender => "Male", :dob => "1991/08/09", :email => 'fc1992@email.com', :country => "Brazil", :password => "chicken", :password_confirmation => "chicken"
+u2 = User.create :username => "benza", :name => 'Kristina Benz', :gender => "Female", :dob => "1989/01/15", :email => 'kristina@email.com', :country => "France", :password => "chicken", :password_confirmation => "chicken"
+u3 = User.create :username => "joseph", :name => 'Joseph Smith', :gender => "Male", :dob => "1981/05/20", :email => 'josephs@email.com', :country => "United Kingdom", :password => "chicken", :password_confirmation => "chicken"
+u4 = User.create :username => "miss-faded", :name => 'Sarah Farell', :gender => "Female", :dob => "1992/03/22", :email => 'sarahf@email.com', :country => "Sweden", :password => "chicken", :password_confirmation => "chicken"
 
 puts "\tUser count: #{ User.all.count }"
 

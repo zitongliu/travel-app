@@ -1,10 +1,13 @@
 <h1>All Achievements</h1>
 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta explicabo mollitia quisquam rerum, necessitatibus sapiente, molestias itaque dolor odit iste consectetur nisi qui esse doloribus? At excepturi, error sapiente officia?</p>
 
-<% @achievements.each do |achievement| %>
+<% @achievements.each do |a| %>
   <hr>
-  <p>Visit Date: <%=achievement.date %></p>
-  <p>Description<%=achievement.description %></p>
+  <% if a.user %>
+    <h4><%= link_to( a.user.name, a ) %></h4>
+  <% end %>
+  <p>Visit Date: <%=a.date %></p>
+  <p>Description: <%=a.description %></p>
   <br>
 <% end %>
 

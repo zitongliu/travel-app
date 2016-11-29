@@ -1,0 +1,19 @@
+
+
+<%= form_for @achievement do |f| %>
+  <p>
+    <%= f.label :date %>
+    <%= f.date_field :date, :required => true %>
+  </p>
+  <p>
+    <%= f.label :description %>
+    <%= f.text_field  :description, :required => false %>
+  </p>
+  <p>
+    <%= f.label :image %>
+    <%= f.text_field  :image, :required => false %>
+  </p>
+
+
+  <%= f.submit %>
+<% end %>
