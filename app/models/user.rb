@@ -19,4 +19,6 @@ class User < ActiveRecord::Base
   has_many :achievements
   has_many :comments
   has_many :locations, :through => :achievements
+
+  
 end

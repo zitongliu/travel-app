@@ -1,4 +1,11 @@
 <h1>All Achievements</h1>
 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta explicabo mollitia quisquam rerum, necessitatibus sapiente, molestias itaque dolor odit iste consectetur nisi qui esse doloribus? At excepturi, error sapiente officia?</p>
 
+<% @achievements.each do |achievement| %>
+  <hr>
+  <p>Visit Date: <%=achievement.date %></p>
+  <p>Description<%=achievement.description %></p>
+  <br>
+<% end %>
+
 <a href="/achievements/new">Create New Achievement</a>

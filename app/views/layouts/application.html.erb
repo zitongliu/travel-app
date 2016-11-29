@@ -8,6 +8,14 @@
 </head>
 <body>
 
+  <% if flash[:success] %>
+    <h5><%= flash[:success] %></h5>
+  <% end %>
+  <% if flash[:error] %>
+    <h5><%= flash[:error] %></h5>
+  <% end %>
+
+
   <nav>
     <div class="nav-wrapper">
       <a href="#" class="brand-logo">Logo</a>
@@ -15,12 +23,19 @@
         <li><a href="/home">Home</a></li>
         <li><a href="/locations">Locations</a></li>
         <li><a href="/achievements">Achievements</a></li>
-        <li><a href="/login">Login</a></li>
-
-        <li><a href="/login">Logut</a></li>
+        <% unless @current_user.present? %>
+          <li> <%= link_to "Sign Up", new_user_path %></li>
+          <li><a href="/login">Login</a></li>
+        <% else %>
+          <li>
+            <%= link_to "Logout | #{@current_user.email}", login_path, :method => :delete %>
+          </li>
+        <% end %>
       </ul>
     </div>
   </nav>
+
+
 
 
 <%= yield %>

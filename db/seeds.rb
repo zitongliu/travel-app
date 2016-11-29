@@ -26,8 +26,8 @@ u1.achievements << a1 << a2
 u2.achievements << a3
 
 Location.destroy_all
-l1 = Location.create :name => "Bondi Beach", :country => "Australia", :description => "To be added", :image => "Coming soon"
-l2 = Location.create :name => "Opera House", :country => "Australia", :description => "To be added", :image => "Coming soon"
+l1 = Location.create :name => "Bondi Beach", :country => "Australia", :description => "Watch a glorious sunrise at world-famous Bondi Beach before an invigorating swim in the turquoise waters or a stroll along the white sands.", :image => "http://bondibeachholidayhomes.com/static/1617/slider/slider4.jpg"
+l2 = Location.create :name => "Opera House", :country => "Australia", :description => "The Sydney Opera House is a multi-venue performing arts centre in Sydney, Australia. It is one of the 20th century's most famous and distinctive buildings.", :image => "http://vignette3.wikia.nocookie.net/godzilla/images/e/e9/Sydney_Opera_House.jpg/revision/latest?cb=20160201161141"
 
 l1.achievements << a1 << a2
 l2.achievements << a3
