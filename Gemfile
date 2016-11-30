@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'cloudinary'
 gem 'geocoder'
 gem 'materialize-sass'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
