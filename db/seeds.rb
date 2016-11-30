@@ -18,9 +18,9 @@ puts "\tUser count: #{ User.all.count }"
 
 
 Achievement.destroy_all
-a1 = Achievement.create :date => "2016/11/28", :image => "coming soon", :description => "Great weather, good food, awesome time."
-a2 = Achievement.create :date => "2016/11/29", :image => "coming soon", :description => "Great weather, good food, awesome time."
-a3 = Achievement.create :date => "2016/10/12", :image => "coming soon", :description => "A day in the harbour."
+a1 = Achievement.create :date => "2016/11/28", :image => "coming soon", :description => "Great weather, good food, awesome time.", :title => "My Visit"
+a2 = Achievement.create :date => "2016/11/29", :image => "coming soon", :description => "A must go place for anyone visiting Sydney", :title => "Perfect Day"
+a3 = Achievement.create :date => "2016/10/12", :image => "coming soon", :description => "Beautiful architecture, very photo friendly! ", :title => "A day in the harbour"
 
 u1.achievements << a1 << a2
 u2.achievements << a3

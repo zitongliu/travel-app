@@ -14,6 +14,12 @@ class AchievementsController < ApplicationController
 
   def create
     @achievement = Achievement.new achievement_params
+
+    if params[:file].present?
+      req = Cloudinary:Uploader.upload(params[:file])
+      @achievement.image = req['public_id']
+    end
+
     if @achievement.valid? && @current_user.present?
       @achievement.user_id = @current_user.id
       @achievement.save
@@ -29,6 +35,15 @@ class AchievementsController < ApplicationController
 
   def update
     @achievement = @current_user.achievements.find_by :id => params[:id]
+
+    if params[:file].present?
+      req = Cloudinary::Uploader.upload(params[:file])
+      @achievement.image = req['public_id']
+    end
+
+    @achievement.assign_attributes(achievement_params)
+    @achievement.save
+
     if @achievement.update( achievement_params )
       redirect_to achievement_path( @achievement )
     else

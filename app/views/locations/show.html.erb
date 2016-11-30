@@ -13,6 +13,9 @@
 <% end %>
 
 <% @location.achievements.each do |achievement| %>
-  <h3><%= achievement.date %></h2>
+  <p><%= link_to(achievement.title, achievement)%></p>
+  <p><%= achievement.date %></p>
+  <p><%= achievement.user.name%></p>
   <p><%= achievement.description%></p>
+  <br>
 <% end %>

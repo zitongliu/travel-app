@@ -1,5 +1,5 @@
 <p> <%= comment.created_at %></p>
-<% if current_user.present? %>
+<% if @current_user.present? %>
 <p> <%= link_to(comment.user.name, user_path) %></p>
 <% else %>
 <p>Anonymous User</p>

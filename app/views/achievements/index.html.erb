@@ -3,8 +3,9 @@
 
 <% @achievements.each do |a| %>
   <hr>
+  <h5><%= link_to( a.title, a) %></h5>
   <% if a.user %>
-    <h4><%= link_to( a.user.name, a ) %></h4>
+    <p><%= link_to( a.user.name, a ) %></p>
   <% end %>
   <p>Visit Date: <%=a.date %></p>
   <p>Description: <%=a.description %></p>
