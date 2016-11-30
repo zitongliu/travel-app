@@ -8,6 +8,10 @@
 <%= image_tag @location.image %>
 
 <h2>Achievements</h2>
+<% if @current_user.present? %>
+  <%= link_to( "Create achievement", new_achievement_path ) %>
+<% end %>
+
 <% @location.achievements.each do |achievement| %>
   <h3><%= achievement.date %></h2>
   <p><%= achievement.description%></p>

@@ -5,6 +5,7 @@ class AchievementsController < ApplicationController
 
   def show
     @achievement = Achievement.find_by :id => params[:id]
+    @comment = Comment.new
   end
 
   def new
@@ -23,6 +24,16 @@ class AchievementsController < ApplicationController
   end
 
   def edit
+    @achievement = @current_user.achievements.find_by :id => params[:id]
+  end
+
+  def update
+    @achievement = @current_user.achievements.find_by :id => params[:id]
+    if @achievement.update( achievement_params )
+      redirect_to achievement_path( @achievement )
+    else
+      render :edit
+    end
   end
 
   private

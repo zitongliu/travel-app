@@ -1,4 +1,20 @@
 <h1>Achievement Details</h1>
+<p>Name: <%= @achievement.user.name %></p>
 <p>Date: <%= @achievement.date%></p>
-<p>Completed by: <%= @achievement %></p>
+<p>Completed by: <%= @achievement.user.name %></p>
 <p>description: <%= @achievement.description%></p>
+<hr>
+<h2> Comments </h2>
+<% if @achievement.comments.any? %>
+  <% @achievement.comments.each do |comment| %>
+    <%= render :partial => 'comments/show', locals: {comment: comment} %>
+  <% end %>
+  <hr>
+<% end %>
+<%= render :partial => 'comments/form', locals: {achievement: @achievement} %>
+<% if @achievement.user.id == @current_user.id %>
+  <div class="controls">
+    <%= link_to "Edit Achievement", edit_achievement_path( @achievement ) %> |
+    <%= link_to "Delete account", achievement_path( @achievement ), :method => :delete, :data => { :confirm => "Are you sure?" } %>
+  </div>
+<% end %>

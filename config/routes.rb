@@ -5,7 +5,10 @@ Rails.application.routes.draw do
   get "/users/edit" => 'users#edit', :as => 'edit_user'
   resources :users, :except => [:edit]
 
-  resources :locations, :achievements
+  resources :locations
+  resources :achievements do
+    resources :comments
+  end
 
   get "/login" => 'session#new', :as => 'login'
   post "/login" => 'session#create'
