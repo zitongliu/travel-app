@@ -16,7 +16,7 @@ class AchievementsController < ApplicationController
     @achievement = Achievement.new achievement_params
 
     if params[:file].present?
-      req = Cloudinary:Uploader.upload(params[:file])
+      req = Cloudinary::Uploader.upload(params[:file])
       @achievement.image = req['public_id']
     end
 
