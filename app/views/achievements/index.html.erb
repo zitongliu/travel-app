@@ -1,18 +1,61 @@
-<h1>All Achievements</h1>
-<h5>Sign up or login to post your own achievement</h5>
+<div class="container">
+  <h1>All Achievements</h1>
 
-<% @achievements.each do |a| %>
-  <hr>
-  <h5><%= link_to( a.title, a) %></h5>
-  <% if a.user %>
-    <p><%= link_to( a.user.name, a ) %></p>
+
+  <div class="row">
+      <% @achievements.each do |a| %>
+      <div class="col s12 m4">
+        <div class="card">
+          <div class="card-image">
+            <img src="<%= a.image %>">
+            <span class="card-title">a.title</span>
+          </div>
+          <div class="card-content">
+            <h5><%= link_to(a.title, a) %></h5>
+            <p><%= a.description %></p>
+          </div>
+          <div class="card-action">
+            <a href="/achievements/<%= a.id%>">View</a>
+          </div>
+        </div>
+      </div>
+      <% end %>
+  </div>
+
+
+
+
+
+  <% @achievements.each do |a| %>
+    <div class="col s12 m7">
+      <h2 class="header"><%= link_to( a.title, a) %></h2>
+      <div class="card horizontal">
+        <div class="card-image">
+          <img src="http://lorempixel.com/100/190/nature/6">
+        </div>
+        <div class="card-stacked">
+          <div class="card-content">
+            <p>I am a very simple card. I am good at containing small bits of information.</p>
+          </div>
+          <div class="card-action">
+            <a href="#">This is a link</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+    <% if a.user %>
+      <p><%= link_to( a.user.name, a ) %></p>
+    <% end %>
+    <p>Location: <%= link_to( a.location.name, "/locations/#{a.location.id}" )%></p>
+    <p>Visit Date: <%=a.date %></p>
+    <p>Description: <%=a.description %></p>
+    <br>
   <% end %>
-  <p>Location: <%= link_to( a.location.name, "/locations/#{a.location.id}" )%></p>
-  <p>Visit Date: <%=a.date %></p>
-  <p>Description: <%=a.description %></p>
-  <br>
-<% end %>
 
-<% if @current_user.present? %>
-  <a href="/achievements/new">Create New Achievement</a>
-<% end %>
+  <% if @current_user.present? %>
+    <a href="/achievements/new">Create New Achievement</a>
+  <% end %>
+</div>
