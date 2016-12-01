@@ -5,14 +5,13 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
-  <%= cloudinary_js_config %>
 
 </head>
 <body>
 
   <nav>
     <div class="nav-wrapper">
-      <a href="#" class="brand-logo">Logo</a>
+      <a href="<%= root_path%>" class="brand-logo">Travel Here</a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
         <li><a href="/home">Home</a></li>
         <li><a href="/users">Users</a></li>
@@ -34,6 +33,10 @@
       </ul>
     </div>
   </nav>
+
+
+
+
 
   <% if flash[:success] %>
     <h5><%= flash[:success] %></h5>

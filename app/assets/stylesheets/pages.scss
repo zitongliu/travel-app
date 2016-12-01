@@ -1,3 +1,16 @@
 // Place all the styles related to the Pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+nav {
+  background-color: #536dfe;
+}
+.card a:hover {
+  color: #009688;
+  font-size: 1.02em;
+  transition: 0.2s;
+}
+.parallax-container {
+  height: 60vh
+}

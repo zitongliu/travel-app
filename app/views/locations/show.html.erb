@@ -1,21 +1,41 @@
-<h1><%= @location.name %></h1>
+<div class="parallax-container">
+  <div class="parallax">
 
-<h2>Info</h2>
-<h3><%= @location.country %></h2>
+    <%= image_tag @location.image2 %>
+  </div>
+</div>
 
-<p><%= @location.description %></p>
+<div class="container">
+  <h1><%= @location.name %></h1>
 
-<%= image_tag @location.image %>
+  <h2>Info</h2>
+  <h3><%= @location.country %></h2>
 
-<h2>Achievements</h2>
-<% if @current_user.present? %>
-  <%= link_to( "Create achievement", new_achievement_path ) %>
-<% end %>
+  <p><%= @location.description %></p>
 
-<% @location.achievements.each do |achievement| %>
-  <p><%= link_to(achievement.title, achievement)%></p>
-  <p><%= achievement.date %></p>
-  <p><%= achievement.user.name%></p>
-  <p><%= achievement.description%></p>
-  <br>
-<% end %>
+  <%= image_tag @location.image %>
+
+
+  <% if @current_user.present? %>
+    <%= link_to( "Create achievement", new_achievement_path ) %>
+  <% end %>
+
+  <h2>Achievements</h2>
+  <div class="row">
+    <% @location.achievements.each do |achievement| %>
+        <div class="col s12 m4">
+          <div class="card">
+            <div class="card-image">
+              <img src="<%= achievement.image%>">
+            </div>
+            <div class="card-content">
+              <h5><%= link_to(achievement.title, achievement)%></h5>
+            </div>
+            <div class="card-action">
+              <a href="/achievements/<%= achievement.id %>">Details</a>
+            </div>
+          </div>
+        </div>
+    <% end %>
+  </div>
+</div>

@@ -15,3 +15,7 @@
 //= require turbolinks
 //= require materialize
 //= require_tree .
+
+$(document).on("ready turbolinks:load", function(){
+   $('.parallax').parallax();
+ });
