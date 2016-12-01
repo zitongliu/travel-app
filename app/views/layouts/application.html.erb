@@ -45,8 +45,14 @@
     <h5><%= flash[:error] %></h5>
   <% end %>
 
+  <%= yield %>
 
-<%= yield %>
+  <footer>
+    <div>
+      <p>Created by Steve Liu </p>
+      <a href="https://github.com/zitongliu/travel-app">Github Repository</a>
+    </div>
+  </footer>
 
 </body>
 </html>

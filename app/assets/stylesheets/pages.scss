@@ -12,5 +12,26 @@ nav {
   transition: 0.2s;
 }
 .parallax-container {
-  height: 60vh
+  height: 100vh;
+}
+.parallaxLeft {
+  width: 50vw;
+  height: 60vh;
+  color:white;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 0px;
+  margin-top: 25vh;
+  margin-left: 5vw;
+}
+
+footer {
+  background-color: #536dfe;
+  text-align: center;
+  color: white;
+}
+footer a {
+  color: white;
+}
+footer a:hover {
+  color: #009688;
 }
