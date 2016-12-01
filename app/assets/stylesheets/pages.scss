@@ -76,3 +76,28 @@ footer a:hover {
   height: 200px;
   width: auto;
 }
+
+.homePage {
+  background-image: url("http://res.cloudinary.com/dsp8hpv9l/image/upload/v1480633908/street-1030930_1920_snhil6.jpg");
+  min-height: 100vh;
+  background-position: center;
+  background-size: cover;
+  color:white;
+  text-align: center;
+}
+.homePage h1 {
+  margin-top: 0px;
+  padding-top: 40vh;
+  font-family: 'Permanent Marker', cursive;
+}
+
+body {
+  font-family: 'Indie Flower', cursive;
+}
+body h1 {
+  font-family: 'Permanent Marker', cursive;
+}
+.brand-logo {
+  font-family: 'Permanent Marker', cursive;
+  margin-left: 15vw;
+}
