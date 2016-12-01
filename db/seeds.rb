@@ -18,12 +18,12 @@ puts "\tUser count: #{ User.all.count }"
 
 
 Achievement.destroy_all
-a1 = Achievement.create :date => "2016/11/28", :image => "coming soon", :description => "Great weather, good food, awesome time.", :title => "My Visit"
-a2 = Achievement.create :date => "2016/11/29", :image => "coming soon", :description => "Kristina was here", :title => "Kristina 29/11/16"
-a3 = Achievement.create :date => "2016/10/12", :image => "coming soon", :description => "Beautiful architecture, very photo friendly! ", :title => "A day in the harbour"
-a4 = Achievement.create :date => "2016/11/01", :image => "coming soon", :description => "Lively place, expensive food.", :title => "Darling Harbour Visit"
-a5 = Achievement.create :date => "2016/09/08", :image => "coming soon", :description => "Magnificent views. Must go when the weather is good. Joseph and Jen was here. 9/8/16", :title => "Darling Harbour Visit"
-a6 = Achievement.create :date => "2016/06/12", :image => "coming soon", :description => "Love you... Sydney", :title => "Sarah and Eugeue 12/6/16"
+a1 = Achievement.create :date => "2016/11/28", :image => "Man_Sunset_Stockphoto_nkdn75.jpg", :description => "Great weather, good food, awesome time.", :title => "My Visit"
+a2 = Achievement.create :date => "2016/11/29", :image => "hnldmnedtw17tqbxcog6.jpg", :description => "Kristina was here", :title => "Kristina 29/11/16"
+a3 = Achievement.create :date => "2016/10/12", :image => "Man_Sunset_Stockphoto_nkdn75.jpg", :description => "Beautiful architecture, very photo friendly! ", :title => "A day in the harbour"
+a4 = Achievement.create :date => "2016/11/01", :image => "Man_Sunset_Stockphoto_nkdn75.jpg", :description => "Lively place, expensive food.", :title => "Darling Harbour Visit"
+a5 = Achievement.create :date => "2016/09/08", :image => "Man_Sunset_Stockphoto_nkdn75.jpg", :description => "Magnificent views. Must go when the weather is good. Joseph and Jen was here. 9/8/16", :title => "Darling Harbour Visit"
+a6 = Achievement.create :date => "2016/06/12", :image => "Man_Sunset_Stockphoto_nkdn75.jpg", :description => "Love you... Sydney", :title => "Sarah and Eugeue 12/6/16"
 u1.achievements << a1 << a4
 u2.achievements << a3 << a2
 u4.achievements << a5
