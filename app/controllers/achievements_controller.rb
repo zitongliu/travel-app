@@ -22,7 +22,10 @@ class AchievementsController < ApplicationController
 
     if @achievement.valid? && @current_user.present?
       @achievement.user_id = @current_user.id
+      @achievement.location_id = session[:current_location]
+
       @achievement.save
+
       redirect_to achievement_path(@achievement)
     else
       render :new
