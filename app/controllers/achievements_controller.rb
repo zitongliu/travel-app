@@ -51,8 +51,17 @@ class AchievementsController < ApplicationController
     end
   end
 
+
+  def destroy
+  # user = User.find_by :id => params[:id]
+    achievement = Achievement.find_by :id => params[:id]
+    achievement.destroy
+
+    redirect_to achievements_path()
+  end
+
   private
     def achievement_params
-      params.require(:achievement).permit(:date, :image, :description)
+      params.require(:achievement).permit(:title, :date, :image, :description)
     end
 end

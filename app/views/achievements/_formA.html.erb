@@ -1,5 +1,9 @@
 <%= form_for(@achievement, :html=> {:multipart => true}) do |f| %>
   <p>
+    <%= f.label :title %>
+    <%= f.text_field :title, :required => true %>
+  </p>
+  <p>
     <%= f.label :date %>
     <%= f.date_field :date, :required => true %>
   </p>

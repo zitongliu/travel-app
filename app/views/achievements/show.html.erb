@@ -2,6 +2,7 @@
 <h3><%= @achievement.title%></h3>
 <p>Name: <%= @achievement.user.name %></p>
 <p>Date: <%= @achievement.date%></p>
+<p>Location: <%= @achievement.location.name%></p>
 <p>Completed by: <%= @achievement.user.name %></p>
 <p>description: <%= @achievement.description%></p>
 <%= cl_image_tag(@achievement.image) %>
@@ -20,6 +21,6 @@
 <% if @current_user && @achievement.user.id == @current_user.id %>
   <div class="controls">
     <%= link_to "Edit Achievement", edit_achievement_path( @achievement ) %> |
-    <%= link_to "Delete account", achievement_path( @achievement ), :method => :delete, :data => { :confirm => "Are you sure?" } %>
+    <%= link_to "Delete Achievement", achievement_path( @achievement ), :method => :delete, :data => { :confirm => "Are you sure?" } %>
   </div>
 <% end %>
