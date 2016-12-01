@@ -21,15 +21,17 @@
 
 </div>
 
+
 <div class="container">
-
-
-
-  <% if @current_user.present? %>
-    <%= link_to( "Create achievement", new_achievement_path ) %>
-  <% end %>
-
   <h2>Achievements</h2>
+  <div class="pageActionButtons">
+    <% if @current_user.present? %>
+      <%= link_to( "Create achievement", new_achievement_path, class: "waves-effect waves-light btn-large" ) %>
+    <% else %>
+      <a href="/login" class="waves-effect waves-light btn-large">Sign in to post</a>
+    <% end %>
+  </div>
+
   <div class="row">
     <% @location.achievements.each do |achievement| %>
         <div class="col s12 m4">
