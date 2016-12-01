@@ -1,21 +1,47 @@
-<h2><%= @user.username %></h2>
-<p>Name: <%= @user.name %></p>
-<p>Gender: <%= @user.gender %></p>
-<p>DOB: <%= @user.dob %></p>
-<p>Country: <%= @user.country%></p>
-<p>Email: <%= @user.email%></p>
 
-<h3>Achievements</h3>
-<% @user.achievements.each do |achievement| %>
-  <hr>
-  <p><%= achievement.date %></p>
-  <p><%= achievement.location.name %></p>
-<% end %>
-<hr>
+<div class="container">
 
-<% if @user == @current_user %>
-  <div class="controls">
-    <%= link_to "Edit user", edit_user_path( @user ) %> |
-    <%= link_to "Delete account", user_path( @user ), :method => :delete, :data => { :confirm => "Are you sure?" } %>
+<div class="row profile z-depth-2" >
+  <<div class="col s6">
+    <%=cl_image_tag(@user.image, class: "profileImageShowPage")%>
   </div>
-<% end %>
+
+  <div>
+    <h3><%= @user.name %></h3>
+    <p>Gender: <%= @user.gender %></p>
+    <p>DOB: <%= @user.dob %></p>
+    <p>Country: <%= @user.country%></p>
+    <p>Email: <%= @user.email%></p>
+  </div>
+  <% if @user == @current_user %>
+    <div class="controls">
+      <%= link_to "Edit user", edit_user_path( @user ) %> |
+      <%= link_to "Delete account", user_path( @user ), :method => :delete, :data => { :confirm => "Are you sure?" } %>
+    </div>
+  <% end %>
+</div>
+
+
+
+  <h3>Achievements</h3>
+
+  <div class="row">
+    <% @user.achievements.each do |achievement| %>
+        <div class="col s12 m4">
+          <div class="card">
+            <div class="card-image">
+              <%= cl_image_tag(achievement.image) %>
+            </div>
+            <div class="card-content">
+              <h5><%= link_to(achievement.title, achievement)%></h5>
+            </div>
+            <div class="card-action">
+              <a href="/achievements/<%= achievement.id %>">Details</a>
+            </div>
+          </div>
+        </div>
+    <% end %>
+  </div>
+
+
+</div>
