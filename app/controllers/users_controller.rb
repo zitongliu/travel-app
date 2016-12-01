@@ -18,6 +18,8 @@ class UsersController < ApplicationController
     if params[:file].present?
       req = Cloudinary::Uploader.upload(params[:file])
       @user.image = req['public_id']
+    else
+      @user.image = "mysteryman-330x312_aadfat.png"
     end
 
     if @user.save

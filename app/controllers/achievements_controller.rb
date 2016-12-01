@@ -18,7 +18,10 @@ class AchievementsController < ApplicationController
     if params[:file].present?
       req = Cloudinary::Uploader.upload(params[:file])
       @achievement.image = req['public_id']
+    else
+      @achievement.image = "Man_Sunset_Stockphoto_nkdn75.jpg"
     end
+
 
     if @achievement.valid? && @current_user.present?
       @achievement.user_id = @current_user.id
