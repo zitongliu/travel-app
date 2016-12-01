@@ -1,29 +1,45 @@
+<div class="parallax-container">
+  <div class="parallax">
+    <%= image_tag @achievement.location.image2 %>
+  </div>
+
+  <div class="row">
+    <div class="col s1">
+
+    </div>
+    <div class="parallaxLeft col s5">
+      <h3><%= @achievement.title%></h3>
+      <p>Completed by: <%= link_to(@achievement.user.name, user_path(@achievement.user.id)) %></p>
+      <p>Date: <%= @achievement.date%></p>
+      <p>Location: <%= link_to(@achievement.location.name, location_path(@achievement.location.id))%></p>
+
+      <hr>
+      <p>Description: <br><%= @achievement.description%></p>
+      <% if @current_user && @achievement.user.id == @current_user.id %>
+        <div class="controls">
+          <%= link_to "Edit Achievement", edit_achievement_path( @achievement ) %> |
+          <%= link_to "Delete Achievement", achievement_path( @achievement ), :method => :delete, :data => { :confirm => "Are you sure?" } %>
+        </div>
+      <% end %>
+    </div>
+    <div class="parallaxRight col s5">
+      <%= cl_image_tag(@achievement.image, class:"achievementImageShowPage") %>
+    </div>
+
+    </div>
+</div>
+
+
 
 <div class="container">
-  <h5>Achievement Details</h5>
-  <h3><%= @achievement.title%></h3>
-  <p>Name: <%= @achievement.user.name %></p>
-  <p>Date: <%= @achievement.date%></p>
-  <p>Location: <%= @achievement.location.name%></p>
-  <p>Completed by: <%= @achievement.user.name %></p>
-  <p>description: <%= @achievement.description%></p>
-  <%= cl_image_tag(@achievement.image) %>
-
-  <hr>
-
-  <h2> Comments </h2>
+  <h3> Comments </h3>
   <% if @achievement.comments.any? %>
     <% @achievement.comments.each do |comment| %>
       <%= render :partial => 'comments/show', locals: {comment: comment} %>
     <% end %>
     <hr>
   <% end %>
+  <hr>
   <%= render :partial => 'comments/form', locals: {achievement: @achievement} %>
 
-  <% if @current_user && @achievement.user.id == @current_user.id %>
-    <div class="controls">
-      <%= link_to "Edit Achievement", edit_achievement_path( @achievement ) %> |
-      <%= link_to "Delete Achievement", achievement_path( @achievement ), :method => :delete, :data => { :confirm => "Are you sure?" } %>
-    </div>
-  <% end %>
 </div>
