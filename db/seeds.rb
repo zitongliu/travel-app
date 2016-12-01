@@ -31,7 +31,7 @@ u3.achievements << a6
 
 
 Location.destroy_all
-l1 = Location.create :name => "Bondi Beach", :country => "Australia", :description => "Watch a glorious sunrise at world-famous Bondi Beach before an invigorating swim in the turquoise waters or a stroll along the white sands.", :image => "http://bondibeachholidayhomes.com/static/1617/slider/slider4.jpg"
+l1 = Location.create :name => "Bondi Beach", :country => "Australia", :description => "Watch a glorious sunrise at world-famous Bondi Beach before an invigorating swim in the turquoise waters or a stroll along the white sands.", :image => "https://img.rezdy.com/PRODUCT_IMAGE/19358/bondi-beach_lg.jpg"
 l2 = Location.create :name => "Opera House", :country => "Australia", :description => "The Sydney Opera House is a multi-venue performing arts centre in Sydney, Australia. It is one of the 20th century's most famous and distinctive buildings.", :image => "http://vignette3.wikia.nocookie.net/godzilla/images/e/e9/Sydney_Opera_House.jpg/revision/latest?cb=20160201161141"
 l3 = Location.create :name => "Three Sisters", :country => "Australia", :description => "The Three Sisters is the Blue Mountains’ most spectacular landmark. Located at Echo Point Katoomba, around 2.5 kilometres from the Great Western Highway, this iconic visitor attraction is experienced by millions of people each year.
 The Three Sisters is essentially an unusual rock formation representing three sisters who according to Aboriginal legend were turned to stone.

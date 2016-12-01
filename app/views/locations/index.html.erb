@@ -1,7 +1,20 @@
-<h1>Locations</h1>
-<% @locations.each do |location| %>
-  <hr>
-  <h3><%= link_to(location.name, location) %></h3>
-  <h5><%= location.country %></h4>
-  <br>
-<% end %>
+<div class="container">
+  <h1>Locations</h1>
+  <div class="row">
+    <% @locations.each do |location| %>
+        <div class="col s12 m4">
+          <div class="card">
+            <div class="card-image">
+              <img src="<%= location.image %>">
+            </div>
+            <div class="card-content">
+              <h5><%= link_to(location.name, location) %></h5>
+            </div>
+            <div class="card-action">
+              <a href="/locations/<%= location.id %>">Discover more</a>
+            </div>
+          </div>
+        </div>
+    <% end %>
+  </div>
+</div>
