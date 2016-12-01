@@ -67,3 +67,12 @@ footer a:hover {
 .achievementImageShowPage {
   height: 60vh;
 }
+
+.card {
+  overflow: hidden;
+}
+
+.card .card-image img {
+  height: 200px;
+  width: auto;
+}
