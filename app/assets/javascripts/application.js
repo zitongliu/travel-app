@@ -18,4 +18,5 @@
 
 $(document).on("ready turbolinks:load", function(){
    $('.parallax').parallax();
+   $(".button-collapse").sideNav();
  });
