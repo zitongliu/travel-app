@@ -3,7 +3,7 @@
   <div class="row">
     <% @users.each do |user| %>
         <div class="col s12 m4">
-          <div class="card">
+          <div class="card hoverable">
             <div class="card-image">
               <%= cl_image_tag(user.image) %>
             </div>
