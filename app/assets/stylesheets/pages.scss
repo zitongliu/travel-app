@@ -32,6 +32,8 @@ footer {
   background-color: #536dfe;
   text-align: center;
   color: white;
+  margin-top: -5.5vh;
+  padding-top: 10px;
 }
 footer a {
   color: white;
@@ -100,4 +102,7 @@ body h1 {
 .brand-logo {
   font-family: 'Permanent Marker', cursive;
   margin-left: 15vw;
+}
+#homePageWelcomeMsg {
+  font-size: 2em;
 }
