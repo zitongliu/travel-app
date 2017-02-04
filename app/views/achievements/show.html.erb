@@ -1,13 +1,14 @@
+
 <div class="parallax-container">
   <div class="parallax">
     <%= image_tag @achievement.location.image2 %>
   </div>
 
   <div class="row">
-    <div class="col s1">
+    <div class="col l1">
 
     </div>
-    <div class="parallaxLeft col s5">
+    <div class="parallaxLeft col s11 m11 l5">
       <h3><%= @achievement.title%></h3>
       <p>Completed by: <%= link_to(@achievement.user.name, user_path(@achievement.user.id)) %></p>
       <p>Date: <%= @achievement.date%></p>
@@ -22,7 +23,7 @@
         </div>
       <% end %>
     </div>
-    <div class="parallaxRight col s5">
+    <div class="parallaxRight col s12 m12 l6">
       <%= cl_image_tag(@achievement.image, class:"achievementImageShowPage") %>
     </div>
 
@@ -31,7 +32,7 @@
 
 
 
-<div class="container">
+<div class="container comments">
   <h3> Comments </h3>
   <% if @achievement.comments.any? %>
     <% @achievement.comments.each do |comment| %>

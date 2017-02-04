@@ -7,7 +7,7 @@
     <div class="col s1">
 
     </div>
-    <div class="parallaxLeft col s6">
+    <div class="parallaxLeft col s12 m8 l6">
       <h1><%= @location.name %></h1>
       <h3><%= @location.country %></h2>
       <p><%= @location.description %></p>
@@ -34,7 +34,7 @@
 
   <div class="row">
     <% @location.achievements.each do |achievement| %>
-        <div class="col s12 m4">
+        <div class="col s12 m6 l4">
           <div class="card">
             <div class="card-image">
               <%= cl_image_tag(achievement.image) %>

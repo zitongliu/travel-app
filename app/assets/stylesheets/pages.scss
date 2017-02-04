@@ -2,7 +2,10 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-
+html, body {
+  min-height: 100vh;
+  position: relative;
+}
 nav {
   background-color: #536dfe;
 }
@@ -16,19 +19,25 @@ nav {
 }
 .parallaxLeft {
   width: 50vw;
-  height: 60vh;
   color:white;
   background-color: rgba(0, 0, 0, 0.7);
   padding: 0px;
-  margin-top: 25vh;
+  margin-top: 18vh;
   margin-left: 5vw;
 }
 .parallaxRight {
-  margin-top: 25vh;
+  margin-top: 3%;
 
 }
 
+.comments {
+  padding-bottom: 10%;
+}
+
 footer {
+  position: absolute;
+  width: 100vw;
+  bottom: 0px;
   background-color: #536dfe;
   text-align: center;
   color: white;
@@ -55,7 +64,7 @@ footer a:hover {
 }
 
 .profileImageShowPage {
-  width: 30vw;
+  width: 400px;
   border-radius: 0%;
 }
 .profile {
@@ -67,7 +76,11 @@ footer a:hover {
   padding: 1em;
 }
 .achievementImageShowPage {
-  height: 60vh;
+  margin-top: 5vh;
+  width: 45vw;
+  // height: 400px;
+  z-index: 99999999999;
+  border-radius: 25%;
 }
 
 .card {
@@ -79,12 +92,21 @@ footer a:hover {
   width: auto;
 }
 
+body.pages.home {
+  background-image: url("beach.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+
+}
+
 .homePage {
   // background-image: url("http://res.cloudinary.com/dsp8hpv9l/image/upload/v1480633908/street-1030930_1920_snhil6.jpg");
   // min-height: 100vh;
   // background-position: center;
   // background-size: cover;
-  color:black;
+  color: #536dfe;
   text-align: center;
 }
 .homePage h1 {
@@ -110,9 +132,9 @@ body h1 {
   margin-left:25vw;
 }
 .homePageSignupContainer{
-  background-color: rgba(192,192,192,0.5);
-  width: 25vw;
-  height: 10vh;
+  background-color: rgba(192,192,192,0.0);
+  width: 300px;
+  height: 80px;
   margin: auto auto;
   border-radius: 10px;
   padding-top: 10px;
@@ -121,4 +143,42 @@ body h1 {
 .form {
   padding: 10px 50px 50px 50px;
   margin-top: 5%;
+}
+
+@media only screen and (max-width: 994px) {
+    .profileImageShowPage {
+      width: 260px;
+    }
+    .parallaxLeft {
+      width: 100%;
+      color:white;
+      background-color: rgba(0, 0, 0, 0.7);
+      padding: 0px;
+      margin-top: 10px;
+
+    }
+
+    .achievementImageShowPage {
+      width: 560px;
+      max-height: 300px;
+    }
+}
+@media only screen and (max-width: 600px) {
+    .profileImageShowPage {
+      width: 200px;
+    }
+
+    .parallaxLeft {
+      width: 100%;
+      color:white;
+      background-color: rgba(0, 0, 0, 0.7);
+      padding: 0px;
+      margin-top: 10px;
+
+    }
+
+    .achievementImageShowPage {
+      width: 360px;
+      max-height: 300px;
+    }
 }

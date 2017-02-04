@@ -1,24 +1,26 @@
 
 <div class="container">
 
-<div class="row profile z-depth-2" >
-  <<div class="col s6">
+<div class="row profile z-depth-2">
+  <div class="col s12 m6 l6">
     <%=cl_image_tag(@user.image, class: "profileImageShowPage")%>
   </div>
 
-  <div>
-    <h3><%= @user.name %></h3>
-    <p>Gender: <%= @user.gender %></p>
-    <p>DOB: <%= @user.dob %></p>
-    <p>Country: <%= @user.country%></p>
-    <p>Email: <%= @user.email%></p>
-  </div>
-  <% if @user == @current_user %>
-    <div class="controls">
-      <%= link_to "Edit user", edit_user_path( @user ) %> |
-      <%= link_to "Delete account", user_path( @user ), :method => :delete, :data => { :confirm => "Are you sure?" } %>
+  <div class="col s12 m6 l6">
+    <div>
+      <h3><%= @user.name %></h3>
+      <p>Gender: <%= @user.gender %></p>
+      <p>DOB: <%= @user.dob %></p>
+      <p>Country: <%= @user.country%></p>
+      <p>Email: <%= @user.email%></p>
     </div>
-  <% end %>
+    <% if @user == @current_user %>
+      <div class="controls">
+        <%= link_to "Edit user", edit_user_path( @user ) %> |
+        <%= link_to "Delete account", user_path( @user ), :method => :delete, :data => { :confirm => "Are you sure?" } %>
+      </div>
+    <% end %>
+  </div>
 </div>
 
 
@@ -27,7 +29,7 @@
 
   <div class="row">
     <% @user.achievements.each do |achievement| %>
-        <div class="col s12 m4">
+        <div class="col s12 m6 l4">
           <div class="card z-depth-2 hoverable">
             <div class="card-image">
               <%= cl_image_tag(achievement.image) %>

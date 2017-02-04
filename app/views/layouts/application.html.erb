@@ -7,7 +7,7 @@
   <%= csrf_meta_tags %>
   <link href="https://fonts.googleapis.com/css?family=Indie+Flower|Permanent+Marker" rel="stylesheet">
 </head>
-<body>
+<body class="<%= params[:controller] %> <%= params[:action] %>">
 
   <nav>
     <div class="nav-wrapper z-depth-4">
@@ -69,7 +69,7 @@
   <br>
   <br>
   <br>
-  
+
   <footer>
     <div>
       <p>Created by Steve Liu </p>
